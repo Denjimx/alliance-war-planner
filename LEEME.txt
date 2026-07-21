@@ -1,0 +1,13 @@
+ALLIANCE WAR PLANNER by DenjiMX — v3.0.1
+
+1. Extrae toda la carpeta.
+2. Abre Alliance_War_Planner_by_DenjiMX_v3_0_1.html en Chrome o Edge.
+
+Cambios de esta versión:
+- Interfaz y herramientas conservadas.
+- Catálogo ampliado a 326 campeones de las seis clases.
+- Nombres corregidos con base en Fandom.
+- Los retratos que ya existían siguen siendo locales.
+- Algunos retratos nuevos se cargan desde Fandom, por lo que requieren conexión a internet la primera vez.
+
+Importante: la exportación PNG puede depender de que el navegador permita cargar retratos externos.
