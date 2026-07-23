@@ -1,23 +1,170 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-<meta name="theme-color" content="#6D28D9">
-<title>War Map | AW Planner</title>
-<meta name="description" content="Organiza visualmente la defensa de Alliance War.">
-<link rel="stylesheet" href="css/war-map.css">
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+  >
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="theme-color" content="#6d28d9">
+
+  <title>Mapa de guerra | AW Planner</title>
+  <meta
+    name="description"
+    content="Asigna los defensores del grupo activo a los 50 nodos de Alliance War."
+  >
+
+  <link rel="stylesheet" href="css/champion-selector.css">
+  <link rel="stylesheet" href="css/war-map.css">
 </head>
+
 <body>
-<header class="mobile-header"><a href="index.html" class="icon-btn home-link" aria-label="Volver al inicio">⌂</a><img class="logo" src="assets/logo.png" alt="MCOC"><div class="brand"><h1>Alliance War Planner</h1><small>by DenjiMX · v5.0 · Sprint 1</small></div><button id="fit" class="icon-btn" aria-label="Ajustar mapa">⌂</button><button id="menuBtn" class="icon-btn" aria-label="Menú">⋮</button></header>
-<div id="viewport" class="viewport"><div id="stage" class="stage"><img id="map" src="assets/map.png" alt="Mapa de Alliance War"></div></div>
-<div id="choiceBanner" class="choice-banner"></div>
-<nav class="bottom-bar"><button id="openChampions" class="bar-btn primary">🏆 Campeones</button><button id="zoomOut" class="bar-btn">− Alejar</button><button id="zoomIn" class="bar-btn">＋ Acercar</button><button id="saveLocal" class="bar-btn">💾 Guardar</button></nav>
-<div id="backdrop" class="sheet-backdrop"></div><section id="sheet" class="sheet" aria-label="Biblioteca de campeones"><div class="grab"></div><div class="sheet-head"><h2>Campeones</h2><button id="closeSheet" class="close-sheet">×</button></div><input id="search" class="search" placeholder="Buscar campeón..."><div id="filters" class="filters"></div><div id="status"></div><div id="gallery"></div></section>
-<div id="menu" class="menu"><button id="recoverLocal">📂 Recuperar</button><button id="downloadProject">📁 Descargar proyecto</button><label>⬆️ Importar proyecto<input id="importProject" type="file" accept="application/json" hidden></label><button id="export">🖼️ Exportar PNG</button><button id="clear" class="danger">🗑️ Limpiar mapa</button></div>
-<div id="toast" class="toast"></div><div id="confirm" class="confirm"><div class="confirm-box"><h3 id="confirmTitle">Eliminar campeón</h3><p id="confirmText"></p><div class="confirm-actions"><button id="confirmNo">Cancelar</button><button id="confirmYes" class="yes">Eliminar</button></div></div></div>
-<script src="js/war-map.js"></script>
+  <header class="app-header">
+    <a class="home-button" href="index.html" aria-label="Volver al inicio">⌂</a>
+
+    <div class="brand">
+      <h1>Mapa de guerra</h1>
+      <p id="groupSummary">Cargando defensa…</p>
+    </div>
+
+    <div class="header-actions">
+      <button id="exportMapButton" class="header-action export-action" type="button">
+        Exportar
+      </button>
+
+      <button id="clearMapButton" class="header-action" type="button">
+        Limpiar
+      </button>
+    </div>
+  </header>
+
+  <nav class="group-tabs" aria-label="Grupos de guerra">
+    <button class="group-tab" type="button" data-group="0">Grupo 1</button>
+    <button class="group-tab" type="button" data-group="1">Grupo 2</button>
+    <button class="group-tab" type="button" data-group="2">Grupo 3</button>
+  </nav>
+
+  <main class="planner-layout">
+    <section class="map-card" aria-label="Mapa de Alliance War">
+      <div class="map-toolbar">
+        <div>
+          <strong id="assignedCount">0 / 50 nodos</strong>
+          <span id="autosaveText">Guardado automático</span>
+        </div>
+
+        <div class="zoom-actions" aria-label="Controles de zoom">
+          <button id="zoomOutButton" type="button" aria-label="Alejar">−</button>
+          <button id="fitButton" type="button">Ajustar</button>
+          <button id="zoomInButton" type="button" aria-label="Acercar">+</button>
+        </div>
+      </div>
+
+      <div id="mapViewport" class="map-viewport">
+        <div id="mapStage" class="map-stage">
+          <img
+            id="warMapImage"
+            src="assets/map.png"
+            alt="Mapa de Alliance War"
+            draggable="false"
+          >
+          <div id="nodesLayer" class="nodes-layer"></div>
+        </div>
+      </div>
+    </section>
+
+    <button id="defendersBackdrop" class="defenders-backdrop" type="button" aria-label="Cerrar defensores"></button>
+
+    <aside id="defendersCard" class="defenders-card">
+      <div class="defenders-header">
+        <div>
+          <h2>Defensores del grupo</h2>
+          <p>Toca un nodo y después elige un defensor.</p>
+        </div>
+
+        <div class="defenders-header-actions">
+          <span id="defenderCountBadge" class="count-badge">0</span>
+          <button id="closeDefendersButton" class="close-defenders-button" type="button" aria-label="Cerrar defensores">×</button>
+        </div>
+      </div>
+
+      <label class="search-field">
+        <span class="sr-only">Buscar defensor</span>
+        <input
+          id="defenderSearch"
+          type="search"
+          placeholder="Buscar defensor o jugador…"
+          autocomplete="off"
+        >
+      </label>
+
+      <div id="selectedNodePanel" class="selected-node-panel">
+        <span>Nodo seleccionado</span>
+        <strong id="selectedNodeLabel">Ninguno</strong>
+        <button id="removeAssignmentButton" type="button" disabled>
+          Quitar defensor
+        </button>
+      </div>
+
+      <div id="defendersList" class="defenders-list"></div>
+
+      <div id="emptyDefense" class="empty-defense" hidden>
+        <strong>No hay defensores en este grupo.</strong>
+        <p>Primero agrega los defensores desde Defense Builder.</p>
+        <a href="defense-builder.html">Abrir Defense Builder</a>
+      </div>
+    </aside>
+  </main>
+
+
+  <div id="playerChoiceModal" class="modal" aria-hidden="true">
+    <button class="modal-backdrop" type="button" data-close-player-modal aria-label="Cerrar"></button>
+
+    <section class="modal-card player-choice-card" role="dialog" aria-modal="true" aria-labelledby="playerChoiceTitle">
+      <h2 id="playerChoiceTitle">¿De qué jugador?</h2>
+      <p id="playerChoiceDescription">
+        Este campeón aparece más de una vez en la defensa.
+      </p>
+
+      <div id="playerChoiceList" class="player-choice-list"></div>
+
+      <div class="modal-actions single-action">
+        <button id="cancelPlayerChoiceButton" type="button">Cancelar</button>
+      </div>
+    </section>
+  </div>
+
+  <button id="openDefendersButton" class="mobile-defenders-button" type="button">
+    Defensores
+  </button>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="confirmModal" class="modal" aria-hidden="true">
+    <button class="modal-backdrop" type="button" data-close-modal aria-label="Cerrar"></button>
+
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <h2 id="confirmTitle">¿Limpiar el mapa?</h2>
+      <p>
+        Se eliminarán las asignaciones de nodos del grupo activo.
+        La defensa del Defense Builder no se modificará.
+      </p>
+
+      <div class="modal-actions">
+        <button id="cancelClearButton" type="button">Cancelar</button>
+        <button id="confirmClearButton" class="danger" type="button">
+          Sí, limpiar
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Estos archivos ya deben existir en tu proyecto. -->
+  <script src="js/data/champions.js"></script>
+  <script src="js/data/war-nodes.js"></script>
+  <script src="js/champion-selector.js"></script>
+  <script src="js/war-map.js"></script>
 </body>
 </html>

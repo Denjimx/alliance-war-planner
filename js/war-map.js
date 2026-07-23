@@ -1,40 +1,1242 @@
-const champions=[{"name":"Black Tarantula","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/blacktarantula.png"},{"name":"Hobgoblin (Phil Urich)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/hobgoblin-philurich.png"},{"name":"Shatterstar","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/shatterstar.png"},{"name":"Phyla-Vell","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/phylavell.png"},{"name":"Wave","class":"science","classLabel":"Científico","image":"assets/champions/science/wave.png"},{"name":"Blade (Stellar Forged)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/blade-stellar.png"},{"name":"Ruby Thursday","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/rubythursday.png"},{"name":"Doctor Bong","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/doctorbong.png"},{"name":"Pixie","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/pixie.png"},{"name":"Madelyne Pryor","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/madelynepryor.png"},{"name":"Blue Marvel","class":"science","classLabel":"Científico","image":"assets/champions/science/bluemarvel.png"},{"name":"M’Baku","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/mbaku.png"},{"name":"Star-Lord (Stellar Forged)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/starlord-stellar.png"},{"name":"Spider-Slayer (J. Jonah Jameson)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/jjj-spiderslayer.png"},{"name":"Imperiosa","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/imperiosa.png"},{"name":"Spider-Man (Pavitr Prabhakar)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/spiderman-pavitr.png"},{"name":"Lizard","class":"science","classLabel":"Científico","image":"assets/champions/science/lizard.png"},{"name":"Franken-Castle","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/frankencastle.png"},{"name":"Dracula","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/dracula.png"},{"name":"Mr. Knight","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/misterknight.png"},{"name":"Silver Samurai","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/silversamurai.png"},{"name":"Cassandra Nova","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/cassandranova.png"},{"name":"Solvarch","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/solvarch.png"},{"name":"High Evolutionary","class":"science","classLabel":"Científico","image":"assets/champions/science/highevolutionary.png"},{"name":"The Maker","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/maker.png"},{"name":"Nico Minoru","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/nicominoru.png"},{"name":"Karolina Dean","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/karolinadean.png"},{"name":"Yelena Belova","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/yelenabelova.png"},{"name":"Dark Phoenix","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/dark-phoenix.png"},{"name":"Lumatrix","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/lumatrix.png"},{"name":"Spider-Woman","class":"science","classLabel":"Científico","image":"assets/champions/science/spiderwoman.png"},{"name":"Jean Grey","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/jeangrey-current.png"},{"name":"Bastion","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/bastion.png"},{"name":"Falcon (Joaquin Torres)","class":"science","classLabel":"Científico","image":"assets/champions/science/falcon-joaquintorres.png"},{"name":"Arnim Zola","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/arnimzola.png"},{"name":"Gentle","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/gentle.png"},{"name":"Okoye","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/okoye.png"},{"name":"Thanos (Deathless)","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/thanos-deathless-trophy.png"},{"name":"Isophyne","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/isophyne.png"},{"name":"Dazzler","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/dazzler.png"},{"name":"Spiral","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/spiral.png"},{"name":"Jack O’Lantern","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/jackolantern.png"},{"name":"Scream","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/scream.png"},{"name":"She-Hulk (Deathless)","class":"science","classLabel":"Científico","image":"assets/champions/science/shehulk-1.png"},{"name":"Shathra","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/shathra.png"},{"name":"Count Nefaria","class":"science","classLabel":"Científico","image":"assets/champions/science/countnefaria.png"},{"name":"Enchantress","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/enchantress.png"},{"name":"Beta Ray Bill","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/betaraybill.png"},{"name":"Vision (Deathless)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/vision-deathless.png"},{"name":"The Leader","class":"science","classLabel":"Científico","image":"assets/champions/science/leader.png"},{"name":"Patriot","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/patriot.png"},{"name":"Northstar","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/northstar.png"},{"name":"Arcade","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/arcade.png"},{"name":"Silver Sable","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/silversable.png"},{"name":"Negasonic Teenage Warhead","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/negasonicteenagewarhead.png"},{"name":"King Groot (Deathless)","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/groot-king-deathless.png"},{"name":"Prowler","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/prowler.png"},{"name":"Spider-Punk","class":"science","classLabel":"Científico","image":"assets/champions/science/spiderpunk.png"},{"name":"The Destroyer","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/destroyer.png"},{"name":"The Serpent","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/serpent.png"},{"name":"Ironheart","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ironheart.png"},{"name":"Dust","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/dust.png"},{"name":"White Tiger","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/whitetiger.png"},{"name":"Bullseye","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/bullseye.png"},{"name":"Onslaught","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/onslaught.png"},{"name":"Guillotine (Deathless)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/guillotine-nameless.png"},{"name":"Maestro","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/maestro-trophy.png"},{"name":"Chee'ilth","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/cheeilth.png"},{"name":"Kushala","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/kushala.png"},{"name":"Morbius","class":"science","classLabel":"Científico","image":"assets/champions/science/morbius.png"},{"name":"Werewolf By Night","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/werewolfbynight.png"},{"name":"Gladiator","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/gladiator.png"},{"name":"Photon","class":"science","classLabel":"Científico","image":"assets/champions/science/photon.png"},{"name":"Vox","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/vox.png"},{"name":"Kindred","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/kindred.png"},{"name":"Silk","class":"science","classLabel":"Científico","image":"assets/champions/science/silk.png"},{"name":"Lady Deathstrike","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ladydeathstrike.png"},{"name":"Dani Moonstar","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/danimoonstar.png"},{"name":"Moondragon","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/moondragon.png"},{"name":"Adam Warlock","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/adam.png"},{"name":"Shocker","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/shocker.png"},{"name":"Sandman","class":"science","classLabel":"Científico","image":"assets/champions/science/sandman.png"},{"name":"Viv Vision","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/vivvision.png"},{"name":"Kate Bishop","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/katebishop.png"},{"name":"Cassie Lang","class":"science","classLabel":"Científico","image":"assets/champions/science/cassielang.png"},{"name":"Ant-Man (Future)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/antman-future.png"},{"name":"Baron Zemo","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/baronzemo.png"},{"name":"Absorbing Man","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/absorbingman.png"},{"name":"Wong","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/wong.png"},{"name":"Wiccan","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/wiccan.png"},{"name":"Valkyrie","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/valkyrie.png"},{"name":"Titania","class":"science","classLabel":"Científico","image":"assets/champions/science/titania.png"},{"name":"Spot","class":"science","classLabel":"Científico","image":"assets/champions/science/spot.png"},{"name":"Spider-Man (Supreme)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/spiderman-supreme.png"},{"name":"Shuri","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/shuri.png"},{"name":"Rintrah","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/rintrah.png"},{"name":"QuickSilver","class":"science","classLabel":"Científico","image":"assets/champions/science/quicksilver.png"},{"name":"Mantis","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/mantis.png"},{"name":"Jessica Jones","class":"science","classLabel":"Científico","image":"assets/champions/science/jessica.png"},{"name":"Iron Man (Infamous)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ironman-infamous.png"},{"name":"Hulkling","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/hulkling.png"},{"name":"Gorr","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/gorr.png"},{"name":"Galan","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/galan.png"},{"name":"Attuma","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/attuma.png"},{"name":"Black Cat","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/black-cat.png"},{"name":"Misty Knight","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/misty-knight.png"},{"name":"Captain Britain","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/captainbritain.png"},{"name":"Sauron","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/sauron.png"},{"name":"Captain America (Sam Wilson)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/captainamerica-samwilson.png"},{"name":"Scorpion","class":"science","classLabel":"Científico","image":"assets/champions/science/scorpion.png"},{"name":"Toad","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/toad.png"},{"name":"Omega Sentinel","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/omegasentinel.png"},{"name":"Odin","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/odin.png"},{"name":"Psycho-Man","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/psycho-man.png"},{"name":"Purgatory","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/purgatory.png"},{"name":"Super-Skrull","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/super-skrull.png"},{"name":"Kraven","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/kraven.png"},{"name":"America Chavez","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/americachavez.png"},{"name":"Mangog","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/mangog.png"},{"name":"Jubilee","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/jubilee.png"},{"name":"Jabari Panther","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/jabari-panther.png"},{"name":"Ikaris","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/ikaris.png"},{"name":"Peni Parker","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/peniparker.png"},{"name":"Silver Centurion","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ironman-silvercenturion.png"},{"name":"Anti-Venom","class":"science","classLabel":"Científico","image":"assets/champions/science/antivenom.png"},{"name":"The Overseer","class":"science","classLabel":"Científico","image":"assets/champions/science/maestro-overseer.png"},{"name":"Sersi","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/sersi.png"},{"name":"Stryfe","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/stryfe.png"},{"name":"Shang Chi","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/shangchi.png"},{"name":"Spider Man 2099","class":"science","classLabel":"Científico","image":"assets/champions/science/spiderman-2099.png"},{"name":"Mister Negative","class":"science","classLabel":"Científico","image":"assets/champions/science/misternegative.png"},{"name":"Scarlet Witch (Sigil)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/scarletwitch-current.png"},{"name":"Knull","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/knull.png"},{"name":"Nimrod","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/nimrod.png"},{"name":"Hercules","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/hercules.png"},{"name":"Kitty Pryde","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/kittypryde.png"},{"name":"Nova","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/nova.png"},{"name":"Air-Walker","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/air-walker.png"},{"name":"Squirrel Girl","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/squirrelgirl.png"},{"name":"Platinum Pool","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/platinum-pool.png"},{"name":"Terrax","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/terrax.png"},{"name":"Red Guardian","class":"science","classLabel":"Científico","image":"assets/champions/science/redguardian.png"},{"name":"Longshot","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/longshot.png"},{"name":"Sasquatch","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/sasquatch.png"},{"name":"Wolverine (Weapon X)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/wolverine-weaponx.png"},{"name":"Storm (Pyramid X)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/storm-pyramid-x.png"},{"name":"Red Goblin","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/red-goblin.png"},{"name":"Black Widow (Deadly Origin)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/black-widow-deadly-origin.png"},{"name":"Hit-Monkey","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/hitmonkey.png"},{"name":"Spider-Ham","class":"science","classLabel":"Científico","image":"assets/champions/science/spiderham.png"},{"name":"Dragon Man","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/dragonman.png"},{"name":"Mojo","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/mojo.png"},{"name":"Guardian","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/guardian.png"},{"name":"Hulk (Immortal)","class":"science","classLabel":"Científico","image":"assets/champions/science/hulk-immortal.png"},{"name":"Abomination (Immortal)","class":"science","classLabel":"Científico","image":"assets/champions/science/abomination-immortal.png"},{"name":"Sorcerer Supreme","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/drstrange-realm.png"},{"name":"Professor X","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/professorx.png"},{"name":"Mole Man","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/moleman.png"},{"name":"Tigra","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/tigra.png"},{"name":"Cosmic Ghost Rider","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/ghostrider-cosmic.png"},{"name":"Apocalypse","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/apocalypse.png"},{"name":"Ronin","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/ronin.png"},{"name":"Invisible Woman","class":"science","classLabel":"Científico","image":"assets/champions/science/invisible-woman.png"},{"name":"Man-Thing","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/manthing.png"},{"name":"Mister Sinister","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/mistersinister.png"},{"name":"Cull Obsidian","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/cullobsidian.png"},{"name":"Annihilus","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/annihilus.png"},{"name":"Mysterio","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/mysterio.png"},{"name":"Elsa Bloodstone","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/elsabloodstone.png"},{"name":"Spider-Man (Stealth-Suit)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/spiderman-stealth.png"},{"name":"Ebony Maw","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/ebonymaw.png"},{"name":"Havok","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/havok.png"},{"name":"Silver Surfer","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/silver-surfer.png"},{"name":"Vision (Aarkus)","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/vision-aarkus.png"},{"name":"Thing","class":"science","classLabel":"Científico","image":"assets/champions/science/thing.png"},{"name":"Captain Marvel","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/captainmarvel-movie.png"},{"name":"Namor","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/namor.png"},{"name":"Sunspot","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/sunspot.png"},{"name":"Guillotine 2099","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/guillotine-2099.png"},{"name":"Mister Fantastic","class":"science","classLabel":"Científico","image":"assets/champions/science/mister-fantastic.png"},{"name":"Warlock","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/warlock.png"},{"name":"Nick Fury","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/nickfury.png"},{"name":"Human Torch","class":"science","classLabel":"Científico","image":"assets/champions/science/human-torch.png"},{"name":"Diablo","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/diablo.png"},{"name":"Doctor Doom","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/doctordoom.png"},{"name":"Black Widow (Claire Voyant)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/blackwidow-timely.png"},{"name":"Red Skull","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/redskull.png"},{"name":"Korg","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/korg.png"},{"name":"Sentry","class":"science","classLabel":"Científico","image":"assets/champions/science/sentry.png"},{"name":"The Champion","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/champion.png"},{"name":"Darkhawk","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/darkhawk.png"},{"name":"Sabretooth","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/sabretooth.png"},{"name":"Goldpool","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/goldpool.png"},{"name":"Heimdall","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/heimdall.png"},{"name":"Venom The Duck","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/venom-the-duck.png"},{"name":"Proxima Midnight","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/proximamidnight.png"},{"name":"Sentinel","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/sentinel.png"},{"name":"Iron Man (Infinity War)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ironman-movie.png"},{"name":"Night Thrasher","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/nightthrasher.png"},{"name":"Masacre","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/masacre.png"},{"name":"Wasp","class":"science","classLabel":"Científico","image":"assets/champions/science/wasp.png"},{"name":"Hulk (Ragnarok)","class":"science","classLabel":"Científico","image":"assets/champions/science/hulk-ragnarok.png"},{"name":"Domino","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/domino.png"},{"name":"Killmonger","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/killmonger.png"},{"name":"Symbiote Supreme","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/symbiote-supreme.png"},{"name":"Emma Frost","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/emmafrost.png"},{"name":"Void","class":"science","classLabel":"Científico","image":"assets/champions/science/void.png"},{"name":"Corvus Glaive","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/corvusglaive.png"},{"name":"Bishop","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/bishop.png"},{"name":"Omega Red","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/omega-red.png"},{"name":"Ghost","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ghost.png"},{"name":"Ægon","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/aegon.png"},{"name":"Captain America (Infinity War)","class":"science","classLabel":"Científico","image":"assets/champions/science/caiw.png"},{"name":"Green Goblin","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/green-goblin.png"},{"name":"Yondu","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/yondu.png"},{"name":"Vulture","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/vulture.png"},{"name":"Gwenpool","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/gwenpool.png"},{"name":"Taskmaster","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/taskmaster.png"},{"name":"M.O.D.O.K.","class":"science","classLabel":"Científico","image":"assets/champions/science/modok.png"},{"name":"Dormammu","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/dormammu.png"},{"name":"Iceman","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/iceman.png"},{"name":"Psylocke","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/psylocke.png"},{"name":"Carnage","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/carnage.png"},{"name":"Spider Man (Stark Enhanced)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/spiderman-movie.png"},{"name":"Doctor Octopus","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/doctor-octopus.png"},{"name":"Blade","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/blade.png"},{"name":"Thor (Ragnarok)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/thor-ragnarok.png"},{"name":"Morningstar","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/morningstar.png"},{"name":"Mephisto","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/mephisto.png"},{"name":"Hela","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/hela.png"},{"name":"Nebula","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/nebula.png"},{"name":"Punisher 2099","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/punisher-2099.png"},{"name":"The Hood","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/hood.png"},{"name":"Angela","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/angela.png"},{"name":"Medusa","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/medusa.png"},{"name":"King Groot","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/king-groot.png"},{"name":"Cable","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/cable.png"},{"name":"Kingpin","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/kingpin.png"},{"name":"Archangel","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/archangel.png"},{"name":"Agent Venom","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/agentvenom.png"},{"name":"Black Panther (Civil War)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/blackpanther-cw.png"},{"name":"Loki","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/loki.png"},{"name":"Beast","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/beast.png"},{"name":"Cyclops (Blue Team)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/cyclops-1.png"},{"name":"Thanos","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/thanos.png"},{"name":"Ultron (Classic)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ultron-classic.png"},{"name":"Civil Warrior","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/civilwarrior.png"},{"name":"Ghost Rider","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/ghostrider.png"},{"name":"Mordo","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/karlmordo.png"},{"name":"Wolverine (X 23)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/x23.png"},{"name":"Old Man Logan","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/wolverine-oldman.png"},{"name":"Rogue","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/rogue.png"},{"name":"Nightcrawler","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/nightcrawler.png"},{"name":"Ms. Marvel (Kamala Khan)","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/ms-marvel-kamala-khan.png"},{"name":"Phoenix","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/phoenix.png"},{"name":"Karnak","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/karnak.png"},{"name":"Doctor Voodoo","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/brothervoodoo.png"},{"name":"Gambit","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/gambit.png"},{"name":"Howard The Duck","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/howardmech.png"},{"name":"Falcon","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/falcon.png"},{"name":"Crossbones","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/crossbones.png"},{"name":"She-Hulk","class":"science","classLabel":"Científico","image":"assets/champions/science/shehulk.png"},{"name":"Red Hulk","class":"science","classLabel":"Científico","image":"assets/champions/science/hulk-red.png"},{"name":"Spider man (Miles Morales)","class":"science","classLabel":"Científico","image":"assets/champions/science/spiderman-morales.png"},{"name":"Venompool","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/venompool.png"},{"name":"Quake","class":"science","classLabel":"Científico","image":"assets/champions/science/quake.png"},{"name":"Hyperion","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/hyperion.png"},{"name":"Deadpool","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/deadpool.png"},{"name":"Rocket Raccoon","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/rocket.png"},{"name":"Kang the Conqueror","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/kang-the-conqueror.png"},{"name":"Iron Patriot","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/iron-patriot.png"},{"name":"Iron Man","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ironman.png"},{"name":"Daredevil (Classic)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/daredevil-classic.png"},{"name":"Punisher","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/punisher.png"},{"name":"Moon Knight","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/moon-knight.png"},{"name":"Elektra","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/elektra.png"},{"name":"Spider-Man (Classic)","class":"science","classLabel":"Científico","image":"assets/champions/science/spiderman.png"},{"name":"Captain America","class":"science","classLabel":"Científico","image":"assets/champions/science/ca.png"},{"name":"Captain America (WWII)","class":"science","classLabel":"Científico","image":"assets/champions/science/captain-america-wwii.png"},{"name":"Rhino","class":"science","classLabel":"Científico","image":"assets/champions/science/rhino.png"},{"name":"Thor (Jane Foster)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/thor-jane-foster.png"},{"name":"Iron Fist","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/ironfist-1.png"},{"name":"Unstoppable Colossus","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/unstoppable-colossus.png"},{"name":"Doctor Strange","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/drstrange.png"},{"name":"Juggernaut","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/juggernaut.png"},{"name":"Iron Fist (Immortal)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/ironfist.png"},{"name":"Cyclops (New Xavier School)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/cyclops.png"},{"name":"Deadpool (X-Force)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/deadpool-x-force.png"},{"name":"Superior Iron Man","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/superior-iron-man.png"},{"name":"Ms. Marvel","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/ms-marvel.png"},{"name":"Spider-Man (Symbiote)","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/spiderman-black.png"},{"name":"Groot","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/groot.png"},{"name":"Black Bolt","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/blackbolt.png"},{"name":"Drax","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/drax.png"},{"name":"Captain Marvel (Classic)","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/captain-marvel-classic.png"},{"name":"Star-Lord","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/starlord.png"},{"name":"Winter Soldier","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/ws.png"},{"name":"Black Widow","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/black-widow.png"},{"name":"Daredevil (Hell's Kitchen)","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/daredevil-netflix.png"},{"name":"Black Panther","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/blackpanther.png"},{"name":"Ant-Man","class":"science","classLabel":"Científico","image":"assets/champions/science/antman.png"},{"name":"Abomination","class":"science","classLabel":"Científico","image":"assets/champions/science/abom.png"},{"name":"Hulk","class":"science","classLabel":"Científico","image":"assets/champions/science/hulk.png"},{"name":"Electro","class":"science","classLabel":"Científico","image":"assets/champions/science/electro.png"},{"name":"Scarlet Witch (Classic)","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/scarletwitch.png"},{"name":"Guillotine","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/guillotine.png"},{"name":"Wolverine","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/wolverine.png"},{"name":"Vision","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/vision-1.png"},{"name":"Vision (Age of Ultron)","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/vision-movie.png"},{"name":"War Machine","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/war-machine.png"},{"name":"Yellow Jacket","class":"science","classLabel":"Científico","image":"assets/champions/science/yellowjacket.png"},{"name":"Spider-Gwen","class":"science","classLabel":"Científico","image":"assets/champions/science/spidergwen.png"},{"name":"Luke Cage","class":"science","classLabel":"Científico","image":"assets/champions/science/lukecage.png"},{"name":"Storm","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/storm.png"},{"name":"Gamora","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/gamora.png"},{"name":"Ronan","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/ronan.png"},{"name":"Thor","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/thor.png"},{"name":"Hawkeye","class":"skill","classLabel":"Hábil","image":"assets/champions/skill/hawkeye.png"},{"name":"Joe Fixit","class":"science","classLabel":"Científico","image":"assets/champions/science/joefixit.png"},{"name":"Magneto (House of X)","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/magneto-marvelnow.png"},{"name":"Hulkbuster","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/hulkbuster-movie.png"},{"name":"Magik","class":"mystic","classLabel":"Místico","image":"assets/champions/mystic/magik.png"},{"name":"Venom","class":"cosmic","classLabel":"Cósmico","image":"assets/champions/cosmic/venom.png"},{"name":"Colossus","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/colossus.png"},{"name":"Ultron","class":"tech","classLabel":"Tecnológico","image":"assets/champions/tech/ultron.png"},{"name":"Magneto","class":"mutant","classLabel":"Mutante","image":"assets/champions/mutant/magneto.png"}];
-const stage=document.getElementById('stage'),viewport=document.getElementById('viewport'),gallery=document.getElementById('gallery'),search=document.getElementById('search');
-let filter='all',placed=[],selected=null,topZ=2,scale=.35,panX=0,panY=0,pendingChampion=null,confirmTarget=null;
-const labels={all:'Todos',cosmic:'Cósmico',science:'Científico',mutant:'Mutante',mystic:'Místico',skill:'Hábil',tech:'Tecnológico'};
-function norm(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),1800)}
-function openSheet(){document.getElementById('sheet').classList.add('open');document.getElementById('backdrop').classList.add('open')}function closeSheet(){document.getElementById('sheet').classList.remove('open');document.getElementById('backdrop').classList.remove('open')}
-document.getElementById('openChampions').onclick=openSheet;document.getElementById('closeSheet').onclick=closeSheet;document.getElementById('backdrop').onclick=closeSheet;
-function renderFilters(){const f=document.getElementById('filters');f.innerHTML='';Object.entries(labels).forEach(([k,v])=>{const b=document.createElement('button');b.className='filter'+(filter===k?' active':'');b.textContent=v;b.onclick=()=>{filter=k;renderFilters();renderGallery()};f.appendChild(b)})}
-function chooseChampion(c,card){pendingChampion=c;document.querySelectorAll('.card').forEach(x=>x.classList.remove('selected-choice'));card.classList.add('selected-choice');const b=document.getElementById('choiceBanner');b.textContent=matchMedia('(min-width:901px)').matches?`${c.name} seleccionado · haz clic en el mapa o arrástralo`:`${c.name} seleccionado · toca el mapa para colocarlo`;b.classList.add('show');if(!matchMedia('(min-width:901px)').matches)closeSheet()}
-function renderGallery(){const q=norm(search.value.trim());const list=champions.filter(c=>(filter==='all'||c.class===filter)&&(!q||norm(c.name).includes(q)));gallery.innerHTML='';list.forEach(c=>{const d=document.createElement('div');d.className='card'+(pendingChampion&&pendingChampion.name===c.name?' selected-choice':'');d.draggable=true;d.title=c.name;d.innerHTML=`<div class="portrait"><img src="${c.image}" alt="${c.name}" loading="lazy" decoding="async"></div><span>${c.name}</span>`;d.onclick=()=>chooseChampion(c,d);d.addEventListener('dragstart',e=>{e.dataTransfer.effectAllowed='copy';e.dataTransfer.setData('application/json',JSON.stringify(c));e.dataTransfer.setData('text/plain',JSON.stringify(c))});gallery.appendChild(d)});document.getElementById('status').textContent=`${list.length} de ${champions.length} campeones`}
-search.addEventListener('input',renderGallery);
-function applyTransform(){stage.style.transform=`translate(${panX}px,${panY}px) scale(${scale})`}
-function fitStage(){const vw=viewport.clientWidth,vh=viewport.clientHeight;scale=Math.min((vw-18)/997,(vh-18)/1577,1);panX=(vw-997*scale)/2;panY=(vh-1577*scale)/2;applyTransform()}
-function clientToStage(x,y){const r=viewport.getBoundingClientRect();return{x:(x-r.left-panX)/scale,y:(y-r.top-panY)/scale}}
-function zoomAt(next,cx=viewport.clientWidth/2,cy=viewport.clientHeight/2){next=Math.max(.18,Math.min(2,next));const sx=(cx-panX)/scale,sy=(cy-panY)/scale;panX=cx-sx*next;panY=cy-sy*next;scale=next;applyTransform()}
-document.getElementById('zoomIn').onclick=()=>zoomAt(scale*1.2);document.getElementById('zoomOut').onclick=()=>zoomAt(scale*.82);document.getElementById('fit').onclick=fitStage;
-viewport.addEventListener('wheel',e=>{if(!matchMedia('(min-width:901px)').matches)return;e.preventDefault();const r=viewport.getBoundingClientRect();zoomAt(scale*(e.deltaY<0?1.1:.9),e.clientX-r.left,e.clientY-r.top)},{passive:false});
-stage.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='copy'});stage.addEventListener('drop',e=>{e.preventDefault();let c;try{c=JSON.parse(e.dataTransfer.getData('application/json')||e.dataTransfer.getData('text/plain'))}catch{return}const p=clientToStage(e.clientX,e.clientY);addPlaced(c,p.x-56,p.y-39);pendingChampion=null;document.getElementById('choiceBanner').classList.remove('show')});
-function removePlaced(o){o.el.remove();placed=placed.filter(x=>x!==o);if(selected===o)selected=null}
-function askDelete(o){confirmTarget=o;document.getElementById('confirmText').textContent=`¿Eliminar a ${o.name} del mapa?`;document.getElementById('confirm').classList.add('open')}
-document.getElementById('confirmNo').onclick=()=>{confirmTarget=null;document.getElementById('confirm').classList.remove('open')};document.getElementById('confirmYes').onclick=()=>{if(confirmTarget)removePlaced(confirmTarget);confirmTarget=null;document.getElementById('confirm').classList.remove('open');toast('Campeón eliminado')};
-document.addEventListener('keydown',e=>{if((e.key==='Delete'||e.key==='Backspace')&&selected&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();removePlaced(selected);toast('Campeón eliminado')}});
-function addPlaced(c,x,y,w=112,h=78){x=Math.max(0,Math.min(997-w,x));y=Math.max(0,Math.min(1577-h,y));const el=document.createElement('div');el.className='placed-item';Object.assign(el.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px',zIndex:++topZ});el.innerHTML=`<img src="${c.image}" alt="${c.name}"><span class="delete-handle">×</span><span class="name-tag">${c.name}</span><span class="resize-handle"></span>`;stage.appendChild(el);const o={name:c.name,class:c.class,image:c.image,x,y,w,h,el};placed.push(o);wire(o);select(o);return o}
-function select(o){if(selected)selected.el.classList.remove('selected');selected=o;o.el.classList.add('selected');o.el.style.zIndex=++topZ}
-function wire(o){const handle=o.el.querySelector('.resize-handle'),del=o.el.querySelector('.delete-handle');del.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();askDelete(o)});o.el.addEventListener('pointerdown',e=>{if(e.target===handle||e.target===del)return;e.preventDefault();e.stopPropagation();select(o);o.el.setPointerCapture(e.pointerId);const sx=e.clientX,sy=e.clientY,ox=o.x,oy=o.y;let moved=false;const move=ev=>{if(Math.abs(ev.clientX-sx)+Math.abs(ev.clientY-sy)>4)moved=true;o.x=Math.max(0,Math.min(997-o.w,ox+(ev.clientX-sx)/scale));o.y=Math.max(0,Math.min(1577-o.h,oy+(ev.clientY-sy)/scale));o.el.style.left=o.x+'px';o.el.style.top=o.y+'px'};const up=()=>{o.el.removeEventListener('pointermove',move);o.el.removeEventListener('pointerup',up);o.el.removeEventListener('pointercancel',up)};o.el.addEventListener('pointermove',move);o.el.addEventListener('pointerup',up);o.el.addEventListener('pointercancel',up)});handle.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();select(o);handle.setPointerCapture(e.pointerId);const sx=e.clientX,startW=o.w,ratio=o.h/o.w;const move=ev=>{let w=Math.max(50,Math.min(420,startW+(ev.clientX-sx)/scale));w=Math.min(w,997-o.x);let h=w*ratio;if(h>1577-o.y){h=1577-o.y;w=h/ratio}o.w=w;o.h=h;o.el.style.width=w+'px';o.el.style.height=h+'px'};const up=()=>{handle.removeEventListener('pointermove',move);handle.removeEventListener('pointerup',up);handle.removeEventListener('pointercancel',up)};handle.addEventListener('pointermove',move);handle.addEventListener('pointerup',up);handle.addEventListener('pointercancel',up)})}
-let pointers=new Map(),gesture=null;
-viewport.addEventListener('pointerdown',e=>{if(e.target.closest('.placed-item'))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});viewport.setPointerCapture(e.pointerId);if(pointers.size===1)gesture={type:'pan',x:e.clientX,y:e.clientY,px:panX,py:panY,moved:false};else if(pointers.size===2){const a=[...pointers.values()];gesture={type:'pinch',dist:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),scale,panX,panY,midX:(a[0].x+a[1].x)/2-viewport.getBoundingClientRect().left,midY:(a[0].y+a[1].y)/2-viewport.getBoundingClientRect().top}}});
-viewport.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(gesture?.type==='pan'&&pointers.size===1){const dx=e.clientX-gesture.x,dy=e.clientY-gesture.y;if(Math.abs(dx)+Math.abs(dy)>8)gesture.moved=true;panX=gesture.px+dx;panY=gesture.py+dy;applyTransform()}else if(gesture?.type==='pinch'&&pointers.size===2){const a=[...pointers.values()],d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);const next=Math.max(.18,Math.min(2,gesture.scale*d/gesture.dist));const sx=(gesture.midX-gesture.panX)/gesture.scale,sy=(gesture.midY-gesture.panY)/gesture.scale;panX=gesture.midX-sx*next;panY=gesture.midY-sy*next;scale=next;applyTransform()}});
-function pointerEnd(e){const wasTap=gesture?.type==='pan'&&!gesture.moved&&pointers.size===1;pointers.delete(e.pointerId);if(wasTap){if(pendingChampion){const p=clientToStage(e.clientX,e.clientY);addPlaced(pendingChampion,p.x-56,p.y-39);toast(`${pendingChampion.name} colocado`);pendingChampion=null;document.getElementById('choiceBanner').classList.remove('show')}else{if(selected)selected.el.classList.remove('selected');selected=null}}if(pointers.size===1){const a=[...pointers.values()][0];gesture={type:'pan',x:a.x,y:a.y,px:panX,py:panY,moved:true}}else if(!pointers.size)gesture=null}
-viewport.addEventListener('pointerup',pointerEnd);viewport.addEventListener('pointercancel',pointerEnd);
-function snapshot(){return{app:'Alliance War Planner',version:'4.0.0-responsive',savedAt:new Date().toISOString(),view:{scale,panX,panY},items:placed.map(o=>({name:o.name,class:o.class,image:o.image,x:o.x,y:o.y,w:o.w,h:o.h}))}}
-function loadProject(data){if(Array.isArray(data))data={items:data};if(!data||!Array.isArray(data.items))throw Error('Formato inválido');placed.forEach(x=>x.el.remove());placed=[];selected=null;data.items.forEach(o=>addPlaced(o,o.x,o.y,o.w,o.h));if(data.view){scale=data.view.scale||scale;panX=Number.isFinite(data.view.panX)?data.view.panX:panX;panY=Number.isFinite(data.view.panY)?data.view.panY:panY;applyTransform()}toast('Proyecto cargado')}
-function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-document.getElementById('saveLocal').onclick=()=>{localStorage.setItem('awPlannerDenjiMX_v3',JSON.stringify(snapshot()));toast('Proyecto guardado')};document.getElementById('recoverLocal').onclick=()=>{const raw=localStorage.getItem('awPlannerDenjiMX_v3');if(!raw)return toast('No hay proyecto guardado');try{loadProject(JSON.parse(raw))}catch{toast('No se pudo recuperar')}closeMenu()};document.getElementById('downloadProject').onclick=()=>{download(new Blob([JSON.stringify(snapshot(),null,2)],{type:'application/json'}),'Alliance_War_Planner.json');closeMenu()};document.getElementById('importProject').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{loadProject(JSON.parse(await f.text()))}catch{alert('Archivo no válido')}e.target.value='';closeMenu()};
-document.getElementById('clear').onclick=()=>{if(confirm('¿Limpiar todos los campeones del mapa?')){placed.forEach(x=>x.el.remove());placed=[];selected=null;toast('Mapa limpiado')}closeMenu()};
-function drawImg(ctx,img,x,y,w,h){return new Promise(res=>{if(img.complete&&img.naturalWidth){ctx.drawImage(img,x,y,w,h);res()}else{img.onload=()=>{ctx.drawImage(img,x,y,w,h);res()};img.onerror=res}})}
-document.getElementById('export').onclick=async()=>{toast('Exportando PNG…');const canvas=document.createElement('canvas');canvas.width=997;canvas.height=1577;const ctx=canvas.getContext('2d');ctx.fillStyle='#000';ctx.fillRect(0,0,997,1577);await drawImg(ctx,document.getElementById('map'),0,0,997,1577);for(const o of placed)await drawImg(ctx,o.el.querySelector('img'),o.x,o.y,o.w,o.h);ctx.textAlign='right';ctx.font='bold 18px Arial';ctx.fillStyle='rgba(192,132,252,.85)';ctx.fillText('Alliance War Planner',975,1535);ctx.font='14px Arial';ctx.fillStyle='rgba(255,255,255,.75)';ctx.fillText('by DenjiMX · v4.0.0',975,1558);canvas.toBlob(b=>{download(b,'Alliance_War_Defense.png');toast('PNG exportado')},'image/png');closeMenu()};
-const menu=document.getElementById('menu');function closeMenu(){menu.classList.remove('open')}document.getElementById('menuBtn').onclick=e=>{e.stopPropagation();menu.classList.toggle('open')};document.addEventListener('pointerdown',e=>{if(!e.target.closest('#menu')&&!e.target.closest('#menuBtn'))closeMenu()});
-window.addEventListener('resize',fitStage);renderFilters();renderGallery();requestAnimationFrame(fitStage);
+"use strict";
+
+(() => {
+  const DEFENSE_STORAGE_KEY = "aw-planner-defense-builder-v1";
+  const MAP_STORAGE_KEY = "aw-planner-war-map-v1";
+  const MAP_WIDTH = 997;
+  const MAP_HEIGHT = 1577;
+  const TOTAL_GROUPS = 3;
+
+  const elements = {
+    groupSummary: document.getElementById("groupSummary"),
+    groupTabs: [...document.querySelectorAll(".group-tab")],
+    assignedCount: document.getElementById("assignedCount"),
+    autosaveText: document.getElementById("autosaveText"),
+    mapViewport: document.getElementById("mapViewport"),
+    mapStage: document.getElementById("mapStage"),
+    mapImage: document.getElementById("warMapImage"),
+    nodesLayer: document.getElementById("nodesLayer"),
+    defendersList: document.getElementById("defendersList"),
+    defenderSearch: document.getElementById("defenderSearch"),
+    defenderCountBadge: document.getElementById("defenderCountBadge"),
+    emptyDefense: document.getElementById("emptyDefense"),
+    selectedNodeLabel: document.getElementById("selectedNodeLabel"),
+    removeAssignmentButton: document.getElementById("removeAssignmentButton"),
+    zoomInButton: document.getElementById("zoomInButton"),
+    zoomOutButton: document.getElementById("zoomOutButton"),
+    fitButton: document.getElementById("fitButton"),
+    clearMapButton: document.getElementById("clearMapButton"),
+    confirmModal: document.getElementById("confirmModal"),
+    cancelClearButton: document.getElementById("cancelClearButton"),
+    confirmClearButton: document.getElementById("confirmClearButton"),
+    toast: document.getElementById("toast"),
+    exportMapButton: document.getElementById("exportMapButton"),
+    defendersCard: document.getElementById("defendersCard"),
+    defendersBackdrop: document.getElementById("defendersBackdrop"),
+    openDefendersButton: document.getElementById("openDefendersButton"),
+    closeDefendersButton: document.getElementById("closeDefendersButton"),
+    playerChoiceModal: document.getElementById("playerChoiceModal"),
+    playerChoiceDescription: document.getElementById("playerChoiceDescription"),
+    playerChoiceList: document.getElementById("playerChoiceList"),
+    cancelPlayerChoiceButton: document.getElementById("cancelPlayerChoiceButton")
+  };
+
+  const state = {
+    defense: loadDefense(),
+    map: loadMapState(),
+    activeGroup: 0,
+    selectedNodeId: null,
+    defenders: [],
+    scale: 0.35,
+    panX: 0,
+    panY: 0,
+    pointers: new Map(),
+    gesture: null,
+    saveMessageTimer: null,
+    toastTimer: null,
+    popNodeId: null,
+    popTimer: null,
+    pendingChampion: null
+  };
+
+  function createEmptyMapState() {
+    return {
+      groups: Array.from({ length: TOTAL_GROUPS }, () => ({
+        assignments: {}
+      }))
+    };
+  }
+
+  function loadDefense() {
+    try {
+      const raw = localStorage.getItem(DEFENSE_STORAGE_KEY);
+
+      if (!raw) {
+        return {
+          activeGroup: 0,
+          groups: Array.from({ length: TOTAL_GROUPS }, () => ({
+            officer: "",
+            players: []
+          }))
+        };
+      }
+
+      const parsed = JSON.parse(raw);
+
+      if (!parsed || !Array.isArray(parsed.groups)) {
+        throw new Error("Formato de defensa inválido");
+      }
+
+      return parsed;
+    } catch (error) {
+      console.error("No se pudo cargar Defense Builder:", error);
+
+      return {
+        activeGroup: 0,
+        groups: Array.from({ length: TOTAL_GROUPS }, () => ({
+          officer: "",
+          players: []
+        }))
+      };
+    }
+  }
+
+  function loadMapState() {
+    const emptyState = createEmptyMapState();
+
+    try {
+      const raw = localStorage.getItem(MAP_STORAGE_KEY);
+
+      if (!raw) {
+        return emptyState;
+      }
+
+      const parsed = JSON.parse(raw);
+
+      if (!parsed || !Array.isArray(parsed.groups)) {
+        return emptyState;
+      }
+
+      emptyState.groups = emptyState.groups.map((defaultGroup, index) => {
+        const savedGroup = parsed.groups[index];
+
+        if (!savedGroup || typeof savedGroup.assignments !== "object") {
+          return defaultGroup;
+        }
+
+        return {
+          assignments: { ...savedGroup.assignments }
+        };
+      });
+
+      return emptyState;
+    } catch (error) {
+      console.error("No se pudo cargar el mapa:", error);
+      return emptyState;
+    }
+  }
+
+  function saveMapState(message = "Cambios guardados") {
+    try {
+      localStorage.setItem(MAP_STORAGE_KEY, JSON.stringify(state.map));
+      showSaveMessage(message);
+    } catch (error) {
+      console.error("No se pudo guardar el mapa:", error);
+      showSaveMessage("No se pudo guardar");
+    }
+  }
+
+  function showSaveMessage(message) {
+    elements.autosaveText.textContent = message;
+    window.clearTimeout(state.saveMessageTimer);
+
+    state.saveMessageTimer = window.setTimeout(() => {
+      elements.autosaveText.textContent = "Guardado automático";
+    }, 1600);
+  }
+
+  function showToast(message) {
+    elements.toast.textContent = message;
+    elements.toast.classList.add("show");
+
+    window.clearTimeout(state.toastTimer);
+
+    state.toastTimer = window.setTimeout(() => {
+      elements.toast.classList.remove("show");
+    }, 1800);
+  }
+
+  function getChampion(championId) {
+    if (!Array.isArray(window.ChampionDatabase)) {
+      return null;
+    }
+
+    return (
+      window.ChampionDatabase.find(
+        (champion) => champion.id === championId
+      ) || null
+    );
+  }
+
+  function getActiveDefenseGroup() {
+    return state.defense.groups?.[state.activeGroup] || {
+      officer: "",
+      players: []
+    };
+  }
+
+  function getActiveMapGroup() {
+    return state.map.groups[state.activeGroup];
+  }
+
+  function getAssignments() {
+    return getActiveMapGroup().assignments;
+  }
+
+  function getGroupDefenders() {
+    const group = getActiveDefenseGroup();
+    const defenders = [];
+
+    (group.players || []).forEach((player, playerIndex) => {
+      (player.defenders || []).forEach((championId, slotIndex) => {
+        if (!championId) {
+          return;
+        }
+
+        const champion = getChampion(championId);
+
+        if (!champion) {
+          return;
+        }
+
+        defenders.push({
+          key: `${playerIndex}:${slotIndex}`,
+          championId,
+          champion,
+          playerIndex,
+          slotIndex,
+          playerName:
+            typeof player.name === "string" && player.name.trim()
+              ? player.name.trim()
+              : `Jugador ${playerIndex + 1}`
+        });
+      });
+    });
+
+    return defenders;
+  }
+
+  function getAssignmentForNode(nodeId) {
+    return getAssignments()[String(nodeId)] || null;
+  }
+
+  function findDefenderByKey(defenderKey) {
+    return (
+      state.defenders.find((defender) => defender.key === defenderKey) ||
+      null
+    );
+  }
+
+  function getNodeForDefender(defenderKey) {
+    const assignments = getAssignments();
+
+    for (const [nodeId, assignedKey] of Object.entries(assignments)) {
+      if (assignedKey === defenderKey) {
+        return Number(nodeId);
+      }
+    }
+
+    return null;
+  }
+
+  function normalizeAssignments() {
+    const assignments = getAssignments();
+    const validDefenderKeys = new Set(
+      state.defenders.map((defender) => defender.key)
+    );
+    const validNodeIds = new Set(
+      (window.WarNodes || []).map((node) => String(node.id))
+    );
+
+    let changed = false;
+
+    Object.keys(assignments).forEach((nodeId) => {
+      if (
+        !validNodeIds.has(nodeId) ||
+        !validDefenderKeys.has(assignments[nodeId])
+      ) {
+        delete assignments[nodeId];
+        changed = true;
+      }
+    });
+
+    if (changed) {
+      saveMapState("Mapa actualizado");
+    }
+  }
+
+  function renderGroupTabs() {
+    elements.groupTabs.forEach((tab) => {
+      const groupIndex = Number(tab.dataset.group);
+      tab.classList.toggle("active", groupIndex === state.activeGroup);
+    });
+  }
+
+  function renderSummary() {
+    const group = getActiveDefenseGroup();
+    const officer =
+      typeof group.officer === "string" && group.officer.trim()
+        ? ` · Oficial: ${group.officer.trim()}`
+        : "";
+
+    elements.groupSummary.textContent =
+      `Grupo ${state.activeGroup + 1}${officer}`;
+  }
+
+  function renderNodes() {
+    if (!Array.isArray(window.WarNodes)) {
+      elements.nodesLayer.innerHTML = "";
+      showToast("No se encontró js/data/war-nodes.js");
+      return;
+    }
+
+    const assignments = getAssignments();
+
+    elements.nodesLayer.innerHTML = window.WarNodes.map((node) => {
+      const defenderKey = assignments[String(node.id)];
+      const defender = findDefenderByKey(defenderKey);
+      const isSelected = state.selectedNodeId === node.id;
+
+      const classes = [
+        "war-node",
+        defender ? "assigned" : "",
+        isSelected ? "selected" : "",
+        state.popNodeId === node.id ? "assigned-pop" : ""
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      const content = defender
+        ? `
+          <img
+            class="node-portrait"
+            src="${escapeAttribute(defender.champion.image)}"
+            alt=""
+          >
+          <span class="node-number">${node.id}</span>
+          <span class="node-player">${escapeHtml(defender.playerName)}</span>
+        `
+        : `<span class="node-number">${node.id}</span>`;
+
+      const label = defender
+        ? `Nodo ${node.id}: ${defender.champion.name}, ${defender.playerName}`
+        : `Nodo ${node.id}: sin defensor`;
+
+      return `
+        <button
+          class="${classes}"
+          type="button"
+          data-node-id="${node.id}"
+          aria-label="${escapeAttribute(label)}"
+          style="left:${node.xPercent}%;top:${node.yPercent}%"
+        >
+          ${content}
+        </button>
+      `;
+    }).join("");
+
+    elements.nodesLayer.querySelectorAll(".war-node").forEach((nodeButton) => {
+      nodeButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        openNodeSelector(Number(nodeButton.dataset.nodeId));
+      });
+    });
+  }
+
+  function renderDefenders() {
+    const query = normalizeText(elements.defenderSearch.value);
+    const assignments = getAssignments();
+
+    const filtered = state.defenders.filter((defender) => {
+      if (!query) {
+        return true;
+      }
+
+      return normalizeText(
+        `${defender.champion.name} ${defender.playerName}`
+      ).includes(query);
+    });
+
+    elements.defenderCountBadge.textContent = state.defenders.length;
+    elements.emptyDefense.hidden = state.defenders.length > 0;
+    elements.defendersList.hidden = state.defenders.length === 0;
+
+    elements.defendersList.innerHTML = filtered.map((defender) => {
+      const assignedNode = getNodeForDefender(defender.key);
+      const isUsed = assignedNode !== null;
+
+      return `
+        <button
+          class="defender-option${isUsed ? " used" : ""}"
+          type="button"
+          data-defender-key="${escapeAttribute(defender.key)}"
+          title="${
+            isUsed
+              ? `Actualmente está en el nodo ${assignedNode}`
+              : "Asignar al nodo seleccionado"
+          }"
+        >
+          <img
+            src="${escapeAttribute(defender.champion.image)}"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          >
+
+          <span class="defender-option-text">
+            <strong>${escapeHtml(defender.champion.name)}</strong>
+            <small>${escapeHtml(defender.playerName)}</small>
+          </span>
+
+          ${
+            isUsed
+              ? `<span class="used-label">Nodo ${assignedNode}</span>`
+              : ""
+          }
+        </button>
+      `;
+    }).join("");
+
+    elements.defendersList
+      .querySelectorAll(".defender-option")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          assignDefender(button.dataset.defenderKey);
+        });
+      });
+  }
+
+  function renderSelectedNodePanel() {
+    if (state.selectedNodeId === null) {
+      elements.selectedNodeLabel.textContent = "Ninguno";
+      elements.removeAssignmentButton.disabled = true;
+      return;
+    }
+
+    const defenderKey = getAssignmentForNode(state.selectedNodeId);
+    const defender = findDefenderByKey(defenderKey);
+
+    elements.selectedNodeLabel.textContent = defender
+      ? `Nodo ${state.selectedNodeId} · ${defender.champion.name}`
+      : `Nodo ${state.selectedNodeId} · Vacío`;
+
+    elements.removeAssignmentButton.disabled = !defender;
+  }
+
+  function renderProgress() {
+    const assigned = Object.keys(getAssignments()).length;
+    elements.assignedCount.textContent = `${assigned} / 50 nodos`;
+  }
+
+  function renderAll() {
+    state.defenders = getGroupDefenders();
+    normalizeAssignments();
+    renderGroupTabs();
+    renderSummary();
+    renderNodes();
+    renderDefenders();
+    renderSelectedNodePanel();
+    renderProgress();
+  }
+
+
+  function openNodeSelector(nodeId) {
+    selectNode(nodeId);
+
+    if (state.defenders.length === 0) {
+      return;
+    }
+
+    if (
+      !window.ChampionSelector ||
+      typeof window.ChampionSelector.open !== "function"
+    ) {
+      showToast("El selector no cargó; usa la lista de defensores");
+      return;
+    }
+
+    window.ChampionSelector.open({
+      onSelect(champion) {
+        handleChampionSelection(champion);
+      }
+    });
+  }
+
+  function handleChampionSelection(champion) {
+    if (!champion || state.selectedNodeId === null) {
+      return;
+    }
+
+    const matches = state.defenders.filter(
+      (defender) => defender.championId === champion.id
+    );
+
+    if (matches.length === 0) {
+      showToast(`${champion.name} no está registrado en este grupo`);
+      return;
+    }
+
+    if (matches.length === 1) {
+      assignDefender(matches[0].key);
+      return;
+    }
+
+    openPlayerChoice(champion, matches);
+  }
+
+  function openPlayerChoice(champion, matches) {
+    state.pendingChampion = champion;
+
+    elements.playerChoiceDescription.textContent =
+      `${champion.name} aparece ${matches.length} veces. Elige el jugador que quieres colocar en el nodo ${state.selectedNodeId}.`;
+
+    elements.playerChoiceList.innerHTML = matches.map((defender) => {
+      const assignedNode = getNodeForDefender(defender.key);
+
+      return `
+        <button
+          class="player-choice-option${assignedNode !== null ? " used" : ""}"
+          type="button"
+          data-defender-key="${escapeAttribute(defender.key)}"
+        >
+          <img src="${escapeAttribute(defender.champion.image)}" alt="">
+          <span>
+            <strong>${escapeHtml(defender.playerName)}</strong>
+            <small>${escapeHtml(defender.champion.name)}</small>
+          </span>
+          <em>${assignedNode !== null ? `Nodo ${assignedNode}` : "Disponible"}</em>
+        </button>
+      `;
+    }).join("");
+
+    elements.playerChoiceList
+      .querySelectorAll(".player-choice-option")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          closePlayerChoice();
+          assignDefender(button.dataset.defenderKey);
+        });
+      });
+
+    elements.playerChoiceModal.classList.add("open");
+    elements.playerChoiceModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closePlayerChoice() {
+    state.pendingChampion = null;
+    elements.playerChoiceModal.classList.remove("open");
+    elements.playerChoiceModal.setAttribute("aria-hidden", "true");
+  }
+
+  function selectNode(nodeId) {
+    state.selectedNodeId = nodeId;
+    renderNodes();
+    renderSelectedNodePanel();
+
+    if (state.defenders.length === 0) {
+      showToast("Este grupo todavía no tiene defensores");
+      return;
+    }
+
+    showToast(`Nodo ${nodeId} seleccionado`);
+  }
+
+  function assignDefender(defenderKey) {
+    if (state.selectedNodeId === null) {
+      showToast("Primero toca un nodo del mapa");
+      return;
+    }
+
+    const defender = findDefenderByKey(defenderKey);
+
+    if (!defender) {
+      return;
+    }
+
+    const assignments = getAssignments();
+    const previousNode = getNodeForDefender(defenderKey);
+
+    if (
+      previousNode !== null &&
+      previousNode !== state.selectedNodeId
+    ) {
+      delete assignments[String(previousNode)];
+    }
+
+    assignments[String(state.selectedNodeId)] = defenderKey;
+
+    state.popNodeId = state.selectedNodeId;
+    window.clearTimeout(state.popTimer);
+    state.popTimer = window.setTimeout(() => {
+      state.popNodeId = null;
+    }, 420);
+
+    saveMapState(
+      `${defender.champion.name} asignado al nodo ${state.selectedNodeId}`
+    );
+
+    renderNodes();
+    renderDefenders();
+    renderSelectedNodePanel();
+    renderProgress();
+
+    showToast(`${defender.champion.name} → nodo ${state.selectedNodeId}`);
+
+    if (window.matchMedia("(max-width: 899px)").matches) {
+      closeDefendersPanel();
+    }
+  }
+
+  function removeSelectedAssignment() {
+    if (state.selectedNodeId === null) {
+      return;
+    }
+
+    const assignments = getAssignments();
+
+    if (!assignments[String(state.selectedNodeId)]) {
+      return;
+    }
+
+    delete assignments[String(state.selectedNodeId)];
+    saveMapState(`Nodo ${state.selectedNodeId} liberado`);
+
+    renderNodes();
+    renderDefenders();
+    renderSelectedNodePanel();
+    renderProgress();
+
+    showToast(`Nodo ${state.selectedNodeId} liberado`);
+  }
+
+  function changeGroup(groupIndex) {
+    if (
+      !Number.isInteger(groupIndex) ||
+      groupIndex < 0 ||
+      groupIndex >= TOTAL_GROUPS
+    ) {
+      return;
+    }
+
+    state.activeGroup = groupIndex;
+    state.selectedNodeId = null;
+
+    state.defense.activeGroup = groupIndex;
+
+    try {
+      localStorage.setItem(
+        DEFENSE_STORAGE_KEY,
+        JSON.stringify(state.defense)
+      );
+    } catch (error) {
+      console.error("No se pudo actualizar el grupo activo:", error);
+    }
+
+    elements.defenderSearch.value = "";
+    renderAll();
+    requestAnimationFrame(focusMap);
+  }
+
+
+  function openDefendersPanel() {
+    elements.defendersCard.classList.add("open");
+    elements.defendersBackdrop.classList.add("open");
+  }
+
+  function closeDefendersPanel() {
+    elements.defendersCard.classList.remove("open");
+    elements.defendersBackdrop.classList.remove("open");
+  }
+
+  function loadImageForCanvas(src) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.decoding = "async";
+
+      image.onload = () => resolve(image);
+      image.onerror = () => reject(new Error(`No se pudo cargar: ${src}`));
+      image.src = src;
+    });
+  }
+
+  function roundedRectPath(context, x, y, width, height, radius) {
+    const r = Math.min(radius, width / 2, height / 2);
+
+    context.beginPath();
+    context.moveTo(x + r, y);
+    context.arcTo(x + width, y, x + width, y + height, r);
+    context.arcTo(x + width, y + height, x, y + height, r);
+    context.arcTo(x, y + height, x, y, r);
+    context.arcTo(x, y, x + width, y, r);
+    context.closePath();
+  }
+
+  function drawCoverImage(context, image, x, y, width, height) {
+    const imageRatio = image.width / image.height;
+    const targetRatio = width / height;
+
+    let sourceX = 0;
+    let sourceY = 0;
+    let sourceWidth = image.width;
+    let sourceHeight = image.height;
+
+    if (imageRatio > targetRatio) {
+      sourceWidth = image.height * targetRatio;
+      sourceX = (image.width - sourceWidth) / 2;
+    } else {
+      sourceHeight = image.width / targetRatio;
+      sourceY = (image.height - sourceHeight) / 2;
+    }
+
+    context.drawImage(
+      image,
+      sourceX,
+      sourceY,
+      sourceWidth,
+      sourceHeight,
+      x,
+      y,
+      width,
+      height
+    );
+  }
+
+  async function exportMapAsImage() {
+    if (elements.exportMapButton.classList.contains("exporting")) {
+      return;
+    }
+
+    elements.exportMapButton.classList.add("exporting");
+    elements.exportMapButton.textContent = "Generando…";
+
+    try {
+      const headerHeight = 112;
+      const canvas = document.createElement("canvas");
+      canvas.width = MAP_WIDTH;
+      canvas.height = MAP_HEIGHT + headerHeight;
+
+      const context = canvas.getContext("2d");
+
+      context.fillStyle = "#0b0b12";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      context.fillStyle = "#171723";
+      context.fillRect(0, 0, canvas.width, headerHeight);
+
+      const group = getActiveDefenseGroup();
+      const officer =
+        typeof group.officer === "string" && group.officer.trim()
+          ? ` · Oficial: ${group.officer.trim()}`
+          : "";
+
+      context.fillStyle = "#ffffff";
+      context.font = "900 34px system-ui, sans-serif";
+      context.fillText(
+        `Alliance War · Grupo ${state.activeGroup + 1}`,
+        34,
+        48
+      );
+
+      context.fillStyle = "#b8b8c7";
+      context.font = "600 19px system-ui, sans-serif";
+      context.fillText(
+        `${Object.keys(getAssignments()).length} defensores colocados${officer}`,
+        34,
+        82
+      );
+
+      const mapImage = await loadImageForCanvas(elements.mapImage.src);
+      context.drawImage(
+        mapImage,
+        0,
+        headerHeight,
+        MAP_WIDTH,
+        MAP_HEIGHT
+      );
+
+      const assignments = getAssignments();
+      const portraitCache = new Map();
+
+      for (const node of window.WarNodes || []) {
+        const defenderKey = assignments[String(node.id)];
+        const defender = findDefenderByKey(defenderKey);
+
+        if (!defender) {
+          continue;
+        }
+
+        let portrait = portraitCache.get(defender.champion.image);
+
+        if (!portrait) {
+          try {
+            portrait = await loadImageForCanvas(defender.champion.image);
+            portraitCache.set(defender.champion.image, portrait);
+          } catch (error) {
+            console.warn(error);
+            portrait = null;
+          }
+        }
+
+        const centerX =
+          Number.isFinite(node.x) ? node.x : (node.xPercent / 100) * MAP_WIDTH;
+        const centerY =
+          headerHeight +
+          (Number.isFinite(node.y)
+            ? node.y
+            : (node.yPercent / 100) * MAP_HEIGHT);
+
+        const radius = 28;
+
+        context.save();
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        context.clip();
+
+        if (portrait) {
+          drawCoverImage(
+            context,
+            portrait,
+            centerX - radius,
+            centerY - radius,
+            radius * 2,
+            radius * 2
+          );
+        } else {
+          context.fillStyle = "#2b2142";
+          context.fillRect(
+            centerX - radius,
+            centerY - radius,
+            radius * 2,
+            radius * 2
+          );
+        }
+
+        context.restore();
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        context.lineWidth = 4;
+        context.strokeStyle = "#ffffff";
+        context.stroke();
+
+        context.beginPath();
+        context.arc(centerX + 21, centerY + 22, 14, 0, Math.PI * 2);
+        context.fillStyle = "#7c3aed";
+        context.fill();
+        context.lineWidth = 3;
+        context.strokeStyle = "#ffffff";
+        context.stroke();
+
+        context.fillStyle = "#ffffff";
+        context.font = "900 14px system-ui, sans-serif";
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText(String(node.id), centerX + 21, centerY + 22);
+
+        context.font = "800 13px system-ui, sans-serif";
+        const playerText = defender.playerName.slice(0, 16);
+        const textWidth = Math.min(
+          150,
+          Math.max(64, context.measureText(playerText).width + 22)
+        );
+        const labelX = centerX - textWidth / 2;
+        const labelY = centerY + 35;
+
+        roundedRectPath(context, labelX, labelY, textWidth, 27, 13.5);
+        context.fillStyle = "rgba(8, 8, 13, 0.88)";
+        context.fill();
+        context.lineWidth = 1.5;
+        context.strokeStyle = "rgba(255,255,255,0.35)";
+        context.stroke();
+
+        context.fillStyle = "#ffffff";
+        context.font = "800 12px system-ui, sans-serif";
+        context.fillText(playerText, centerX, labelY + 14);
+
+        context.textAlign = "start";
+        context.textBaseline = "alphabetic";
+      }
+
+      const blob = await new Promise((resolve) => {
+        canvas.toBlob(resolve, "image/png", 1);
+      });
+
+      if (!blob) {
+        throw new Error("No se pudo generar el archivo PNG");
+      }
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `alliance-war-grupo-${state.activeGroup + 1}.png`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast("Mapa exportado como PNG");
+    } catch (error) {
+      console.error("Error al exportar el mapa:", error);
+      showToast("No se pudo exportar. Revisa la consola.");
+    } finally {
+      elements.exportMapButton.classList.remove("exporting");
+      elements.exportMapButton.textContent = "Exportar";
+    }
+  }
+
+  function openClearModal() {
+    elements.confirmModal.classList.add("open");
+    elements.confirmModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeClearModal() {
+    elements.confirmModal.classList.remove("open");
+    elements.confirmModal.setAttribute("aria-hidden", "true");
+  }
+
+  function clearActiveMap() {
+    getActiveMapGroup().assignments = {};
+    state.selectedNodeId = null;
+    saveMapState(`Mapa del grupo ${state.activeGroup + 1} limpiado`);
+    closeClearModal();
+    renderAll();
+    showToast(`Mapa del grupo ${state.activeGroup + 1} limpiado`);
+  }
+
+  function applyTransform() {
+    const screenNodeSize = Math.max(
+      38,
+      Math.min(58, 44 + (state.scale - 0.35) * 18)
+    );
+
+    elements.mapStage.style.setProperty(
+      "--node-stage-size",
+      `${screenNodeSize / state.scale}px`
+    );
+
+    elements.mapStage.style.transform =
+      `translate(${state.panX}px, ${state.panY}px) scale(${state.scale})`;
+  }
+
+  function fitMap() {
+    const width = elements.mapViewport.clientWidth;
+    const height = elements.mapViewport.clientHeight;
+
+    if (!width || !height) {
+      return;
+    }
+
+    state.scale = Math.min(
+      (width - 18) / MAP_WIDTH,
+      (height - 18) / MAP_HEIGHT,
+      1
+    );
+
+    state.panX = (width - MAP_WIDTH * state.scale) / 2;
+    state.panY = (height - MAP_HEIGHT * state.scale) / 2;
+
+    applyTransform();
+  }
+
+  function focusMap() {
+    fitMap();
+
+    const multiplier =
+      window.matchMedia("(min-width: 900px)").matches ? 1.48 : 1.22;
+
+    const nextScale = Math.min(1.15, state.scale * multiplier);
+
+    zoomAt(
+      nextScale,
+      elements.mapViewport.clientWidth / 2,
+      elements.mapViewport.clientHeight / 2
+    );
+  }
+
+  function zoomAt(nextScale, viewportX, viewportY) {
+    const clamped = Math.max(0.18, Math.min(2.2, nextScale));
+    const stageX = (viewportX - state.panX) / state.scale;
+    const stageY = (viewportY - state.panY) / state.scale;
+
+    state.panX = viewportX - stageX * clamped;
+    state.panY = viewportY - stageY * clamped;
+    state.scale = clamped;
+
+    applyTransform();
+  }
+
+  function endPointer(event) {
+    if (!state.pointers.has(event.pointerId)) {
+      return;
+    }
+
+    state.pointers.delete(event.pointerId);
+
+    if (state.pointers.size === 1) {
+      const remaining = [...state.pointers.values()][0];
+
+      state.gesture = {
+        type: "pan",
+        startX: remaining.x,
+        startY: remaining.y,
+        panX: state.panX,
+        panY: state.panY
+      };
+    } else if (state.pointers.size === 0) {
+      state.gesture = null;
+      elements.mapViewport.classList.remove("dragging");
+    }
+  }
+
+  function initializeGestures() {
+    elements.mapViewport.addEventListener("pointerdown", (event) => {
+      if (event.target.closest(".war-node")) {
+        return;
+      }
+
+      elements.mapViewport.setPointerCapture(event.pointerId);
+      state.pointers.set(event.pointerId, {
+        x: event.clientX,
+        y: event.clientY
+      });
+
+      if (state.pointers.size === 1) {
+        state.gesture = {
+          type: "pan",
+          startX: event.clientX,
+          startY: event.clientY,
+          panX: state.panX,
+          panY: state.panY
+        };
+
+        elements.mapViewport.classList.add("dragging");
+      } else if (state.pointers.size === 2) {
+        const points = [...state.pointers.values()];
+        const rect = elements.mapViewport.getBoundingClientRect();
+
+        state.gesture = {
+          type: "pinch",
+          distance: Math.hypot(
+            points[0].x - points[1].x,
+            points[0].y - points[1].y
+          ),
+          scale: state.scale,
+          panX: state.panX,
+          panY: state.panY,
+          midpointX:
+            (points[0].x + points[1].x) / 2 - rect.left,
+          midpointY:
+            (points[0].y + points[1].y) / 2 - rect.top
+        };
+      }
+    });
+
+    elements.mapViewport.addEventListener("pointermove", (event) => {
+      if (!state.pointers.has(event.pointerId)) {
+        return;
+      }
+
+      state.pointers.set(event.pointerId, {
+        x: event.clientX,
+        y: event.clientY
+      });
+
+      if (state.gesture?.type === "pan" && state.pointers.size === 1) {
+        state.panX =
+          state.gesture.panX + event.clientX - state.gesture.startX;
+        state.panY =
+          state.gesture.panY + event.clientY - state.gesture.startY;
+
+        applyTransform();
+      } else if (
+        state.gesture?.type === "pinch" &&
+        state.pointers.size === 2
+      ) {
+        const points = [...state.pointers.values()];
+        const distance = Math.hypot(
+          points[0].x - points[1].x,
+          points[0].y - points[1].y
+        );
+
+        const nextScale = Math.max(
+          0.18,
+          Math.min(
+            2.2,
+            state.gesture.scale *
+              (distance / state.gesture.distance)
+          )
+        );
+
+        const stageX =
+          (state.gesture.midpointX - state.gesture.panX) /
+          state.gesture.scale;
+        const stageY =
+          (state.gesture.midpointY - state.gesture.panY) /
+          state.gesture.scale;
+
+        state.panX =
+          state.gesture.midpointX - stageX * nextScale;
+        state.panY =
+          state.gesture.midpointY - stageY * nextScale;
+        state.scale = nextScale;
+
+        applyTransform();
+      }
+    });
+
+    elements.mapViewport.addEventListener("pointerup", endPointer);
+    elements.mapViewport.addEventListener("pointercancel", endPointer);
+
+    elements.mapViewport.addEventListener(
+      "wheel",
+      (event) => {
+        event.preventDefault();
+
+        const rect = elements.mapViewport.getBoundingClientRect();
+        const viewportX = event.clientX - rect.left;
+        const viewportY = event.clientY - rect.top;
+
+        zoomAt(
+          state.scale * (event.deltaY < 0 ? 1.12 : 0.89),
+          viewportX,
+          viewportY
+        );
+      },
+      { passive: false }
+    );
+  }
+
+  function normalizeText(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function escapeAttribute(value) {
+    return escapeHtml(value);
+  }
+
+  function initializeEvents() {
+    elements.groupTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        changeGroup(Number(tab.dataset.group));
+      });
+    });
+
+    elements.defenderSearch.addEventListener("input", renderDefenders);
+    elements.removeAssignmentButton.addEventListener(
+      "click",
+      removeSelectedAssignment
+    );
+
+    elements.zoomInButton.addEventListener("click", () => {
+      zoomAt(
+        state.scale * 1.2,
+        elements.mapViewport.clientWidth / 2,
+        elements.mapViewport.clientHeight / 2
+      );
+    });
+
+    elements.zoomOutButton.addEventListener("click", () => {
+      zoomAt(
+        state.scale * 0.82,
+        elements.mapViewport.clientWidth / 2,
+        elements.mapViewport.clientHeight / 2
+      );
+    });
+
+    elements.fitButton.addEventListener("click", fitMap);
+    elements.exportMapButton.addEventListener("click", exportMapAsImage);
+    elements.openDefendersButton.addEventListener("click", openDefendersPanel);
+    elements.closeDefendersButton.addEventListener("click", closeDefendersPanel);
+    elements.defendersBackdrop.addEventListener("click", closeDefendersPanel);
+    elements.clearMapButton.addEventListener("click", openClearModal);
+    elements.cancelClearButton.addEventListener("click", closeClearModal);
+    elements.confirmClearButton.addEventListener("click", clearActiveMap);
+    elements.cancelPlayerChoiceButton.addEventListener("click", closePlayerChoice);
+
+    document.querySelectorAll("[data-close-player-modal]").forEach((element) => {
+      element.addEventListener("click", closePlayerChoice);
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach((element) => {
+      element.addEventListener("click", closeClearModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeClearModal();
+        closePlayerChoice();
+        closeDefendersPanel();
+      }
+    });
+
+    let resizeTimer = null;
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(focusMap, 120);
+    });
+
+    window.addEventListener("storage", (event) => {
+      if (event.key === DEFENSE_STORAGE_KEY) {
+        state.defense = loadDefense();
+        state.activeGroup = Number.isInteger(state.defense.activeGroup)
+          ? state.defense.activeGroup
+          : 0;
+        state.selectedNodeId = null;
+        renderAll();
+      }
+    });
+  }
+
+  function initialize() {
+    if (!Array.isArray(window.ChampionDatabase)) {
+      showToast("No se encontró js/data/champions.js");
+    }
+
+    if (!Array.isArray(window.WarNodes)) {
+      showToast("No se encontró js/data/war-nodes.js");
+    }
+
+    const savedActiveGroup = Number(state.defense.activeGroup);
+
+    state.activeGroup =
+      Number.isInteger(savedActiveGroup) &&
+      savedActiveGroup >= 0 &&
+      savedActiveGroup < TOTAL_GROUPS
+        ? savedActiveGroup
+        : 0;
+
+    initializeEvents();
+    initializeGestures();
+    renderAll();
+
+    if (elements.mapImage.complete) {
+      requestAnimationFrame(focusMap);
+    } else {
+      elements.mapImage.addEventListener("load", fitMap, { once: true });
+    }
+  }
+
+  initialize();
+})();
