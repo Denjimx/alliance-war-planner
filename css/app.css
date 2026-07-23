@@ -27,3 +27,10 @@
 @media(max-width:1100px){.module-card-wide{grid-template-columns:1fr}.defense-visual,.war-visual{margin-top:18px;padding-left:0;min-width:0}.module-card-wide{min-height:310px}}
 @media(max-width:860px){.mobile-nav{display:none}.mobile-nav.open{display:grid}.dashboard-main{padding-top:23px}.future-grid{grid-template-columns:1fr}.module-card-wide{padding:22px}.defense-visual{grid-template-columns:1fr;gap:10px}.mini-group{display:grid;grid-template-columns:85px 1fr 1fr;gap:8px;align-items:center}.mini-group>span{margin:0}.shield-row{margin:0}.war-visual{height:130px}.dashboard-tip{line-height:1.5}}
 @media(max-width:560px){.module-card-wide{min-height:auto}.war-visual,.defense-visual{display:none}.compact-card p{margin-right:0}.lock-mark{display:none}}
+
+/* Sprint 1 final dashboard lock */
+.war-season{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:.22em;min-height:168px;padding:0 24px;font-size:clamp(34px,4.7vw,76px);font-weight:1000;letter-spacing:.01em;white-space:nowrap;text-align:center;text-shadow:0 8px 26px rgba(0,0,0,.45)}
+.war-season span{color:#fff}
+.war-season strong{color:var(--purple);font:inherit}
+@media(max-width:1100px){.war-season{min-height:120px;margin-top:10px}}
+@media(max-width:560px){.war-season{display:none}}
