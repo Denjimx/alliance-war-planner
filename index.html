@@ -1,1 +1,124 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><meta name="theme-color" content="#6D28D9"><title>AW Planner 5.0</title><meta name="description" content="Planifica una Alliance War en menos de 10 minutos."><link rel="stylesheet" href="css/app.css"></head><body><div class="mobile-top"><img src="favicon.png" alt="AW"><strong>AW <span style="color:var(--purple2)">PLANNER</span></strong><button class="mobile-menu" data-mobile-menu>☰</button></div><nav class="mobile-nav" data-mobile-nav><a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span>Inicio</a><a class="nav-link" href="war-map.html"><span class="nav-icon">⚔</span>War Map</a><a class="nav-link" href="defense-builder.html"><span class="nav-icon">🛡</span>Defense Builder</a><span class="nav-link disabled"><span class="nav-icon">⚔</span>Attack Planner<span class="badge">Próximamente</span></span><span class="nav-link disabled"><span class="nav-icon">👥</span>Roster Manager<span class="badge">Próximamente</span></span></nav><div class="app-shell"><aside class="sidebar"><div class="brand-lockup"><img src="favicon.png" alt="AW Planner"><div><strong>AW <span>PLANNER</span></strong><div class="version">5.0 · MODULAR</div></div></div><nav class="nav"><a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span>Inicio</a><a class="nav-link" href="war-map.html"><span class="nav-icon">⚔</span>War Map</a><a class="nav-link" href="defense-builder.html"><span class="nav-icon">🛡</span>Defense Builder</a><span class="nav-link disabled"><span class="nav-icon">⚔</span>Attack Planner<span class="badge">Próximamente</span></span><span class="nav-link disabled"><span class="nav-icon">👥</span>Roster Manager<span class="badge">Próximamente</span></span></nav><div class="sidebar-note"><strong>La misión</strong><p>Planear una Alliance War en menos de 10 minutos.</p></div></aside><main class="main"><header class="topbar"><div><div class="eyebrow">Bienvenido</div><h1>¿Qué quieres <span>planear</span> hoy?</h1></div><div class="top-actions"><button class="round-btn" title="Ayuda">?</button><button class="round-btn" title="Configuración">⚙</button></div></header><section class="module-grid"><article class="module-card primary"><div class="module-head"><div class="module-icon">⚔</div><div><h2>War Map</h2></div></div><p>Abre el planner visual actual y acomoda a los defensores directamente sobre el mapa de guerra.</p><div class="preview preview-map"></div><div class="module-actions"><a class="btn" href="war-map.html">Abrir módulo →</a></div></article><article class="module-card defense"><div class="module-head"><div class="module-icon">🛡</div><div><h2>Defense Builder</h2></div></div><p>Organiza tres grupos de diez jugadores y asigna cinco defensores a cada miembro.</p><div class="preview preview-champs"><img src="assets/champions/mutant/onslaught.png" alt=""><img src="assets/champions/science/photon.png" alt=""><img src="assets/champions/skill/bullseye.png" alt=""></div><div class="module-actions"><a class="btn green" href="defense-builder.html">Abrir módulo →</a></div></article><article class="module-card locked"><div class="module-head"><div class="module-icon">⚔</div><div><h2>Attack Planner</h2></div></div><p>Planeación de rutas y atacantes. Se desarrollará después del MVP defensivo.</p><div class="module-actions"><span class="btn ghost">Próximamente</span></div></article><article class="module-card locked"><div class="module-head"><div class="module-icon">👥</div><div><h2>Roster Manager</h2></div></div><p>Biblioteca de rosters para reutilizar campeones en futuras guerras.</p><div class="module-actions"><span class="btn ghost">Próximamente</span></div></article></section><h2 class="section-title">Flujo principal</h2><section class="flow"><div class="flow-step"><span class="flow-number">1</span><div><strong>Defense Builder</strong><small>Da de alta grupos, jugadores y defensores.</small></div></div><div class="flow-arrow">→</div><div class="flow-step"><span class="flow-number">2</span><div><strong>War Map</strong><small>Acomoda únicamente los defensores previamente elegidos.</small></div></div></section></main></div><script src="js/app.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="favicon.png">
+  <meta name="theme-color" content="#6D28D9">
+  <title>AW Planner 5.0</title>
+  <meta name="description" content="Planifica una Alliance War en menos de 10 minutos.">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="mobile-top">
+    <img src="favicon.png" alt="AW">
+    <strong>AW <span style="color:var(--purple2)">PLANNER</span></strong>
+    <button class="mobile-menu" data-mobile-menu aria-label="Abrir menú">☰</button>
+  </div>
+
+  <nav class="mobile-nav" data-mobile-nav>
+    <a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span>Inicio</a>
+    <a class="nav-link" href="defense-builder.html"><span class="nav-icon">🛡</span>Defense Builder</a>
+    <a class="nav-link" href="war-map.html"><span class="nav-icon">⚔</span>War Map</a>
+    <span class="nav-link disabled"><span class="nav-icon">⚔</span>Attack Planner<span class="badge">Próximamente</span></span>
+    <span class="nav-link disabled"><span class="nav-icon">👥</span>Roster Manager<span class="badge">Próximamente</span></span>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup">
+        <img src="favicon.png" alt="AW Planner">
+        <div>
+          <strong>AW <span>PLANNER</span></strong>
+          <div class="version">5.0 · MODULAR</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span>Inicio</a>
+        <a class="nav-link" href="defense-builder.html"><span class="nav-icon">🛡</span>Defense Builder</a>
+        <a class="nav-link" href="war-map.html"><span class="nav-icon">⚔</span>War Map</a>
+        <div class="nav-divider"></div>
+        <span class="nav-link disabled"><span class="nav-icon">⚔</span>Attack Planner<span class="badge">Próximamente</span></span>
+        <span class="nav-link disabled"><span class="nav-icon">👥</span>Roster Manager<span class="badge">Próximamente</span></span>
+      </nav>
+
+      <div class="sidebar-note mission-note">
+        <div class="mission-icon">🏆</div>
+        <p>Planear una Alliance War<br>en menos de <strong>10 minutos.</strong></p>
+        <small>Organiza mejor. Gana más.</small>
+      </div>
+    </aside>
+
+    <main class="main dashboard-main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Bienvenido</div>
+          <h1>¿Qué quieres <span>planear</span> hoy?</h1>
+          <p class="hero-copy">Elige un módulo para comenzar a organizar tu guerra.</p>
+        </div>
+        <div class="top-actions">
+          <button class="round-btn" title="Ayuda">?</button>
+          <button class="round-btn" title="Configuración">⚙</button>
+        </div>
+      </header>
+
+      <section class="dashboard-modules">
+        <article class="module-card module-card-wide defense featured-step">
+          <div class="card-copy">
+            <div class="module-head">
+              <div class="module-icon">🛡</div>
+              <div>
+                <h2>Defense Builder</h2>
+                <span class="step-label green-label">Primer paso</span>
+              </div>
+            </div>
+            <p>Organiza tres grupos de diez jugadores<br>y asigna cinco defensores a cada miembro.</p>
+            <div class="module-actions"><a class="btn green" href="defense-builder.html">Ver defensa <span>→</span></a></div>
+          </div>
+          <div class="defense-visual" aria-hidden="true">
+            <div class="mini-group"><span>GRUPO 1</span><div class="people-row">● ● ● ● ●</div><div class="shield-row">♢ ♢ ♢ ♢ ♢</div></div>
+            <div class="mini-group"><span>GRUPO 2</span><div class="people-row">● ● ● ● ●</div><div class="shield-row">♢ ♢ ♢ ♢ ♢</div></div>
+            <div class="mini-group"><span>GRUPO 3</span><div class="people-row">● ● ● ● ●</div><div class="shield-row">♢ ♢ ♢ ♢ ♢</div></div>
+          </div>
+        </article>
+
+        <article class="module-card module-card-wide primary featured-step">
+          <div class="card-copy">
+            <div class="module-head">
+              <div class="module-icon">⚔</div>
+              <div>
+                <h2>War Map</h2>
+                <span class="step-label purple-label">Paso siguiente</span>
+              </div>
+            </div>
+            <p>Abre el planner visual actual y acomoda<br>a los defensores directamente en el mapa.</p>
+            <div class="module-actions"><a class="btn" href="war-map.html">Ir al mapa <span>→</span></a></div>
+          </div>
+          <div class="war-visual" aria-hidden="true">
+            <div class="war-lines"></div>
+            <div class="war-core">AW</div>
+            <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><i class="node n5"></i><i class="node n6"></i><i class="node n7"></i>
+          </div>
+        </article>
+
+        <div class="future-grid">
+          <article class="module-card locked compact-card">
+            <div class="module-head"><div class="module-icon">⚔</div><div><h2>Attack Planner</h2><span class="step-label purple-label">Próximamente</span></div></div>
+            <p>Planeación de rutas y atacantes. Se desarrollará después del MVP defensivo.</p>
+            <div class="lock-mark">🔒</div>
+          </article>
+          <article class="module-card locked compact-card">
+            <div class="module-head"><div class="module-icon">👥</div><div><h2>Roster Manager</h2><span class="step-label purple-label">Próximamente</span></div></div>
+            <p>Biblioteca de rosters para reutilizar campeones en futuras guerras.</p>
+            <div class="lock-mark">🔒</div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="dashboard-tip"><span class="tip-star">★</span><strong>Consejo:</strong> Comienza en Defense Builder para organizar tus grupos y defensores. Luego pasa al <span>War Map</span> para colocarlos estratégicamente.</aside>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
