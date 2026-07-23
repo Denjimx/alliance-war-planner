@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#6D28D9">
+<title>War Map | AW Planner</title>
+<meta name="description" content="Organiza visualmente la defensa de Alliance War.">
+<link rel="stylesheet" href="css/war-map.css">
+</head>
+<body>
+<header class="mobile-header"><a href="index.html" class="icon-btn home-link" aria-label="Volver al inicio">⌂</a><img class="logo" src="assets/logo.png" alt="MCOC"><div class="brand"><h1>Alliance War Planner</h1><small>by DenjiMX · v5.0 · Sprint 1</small></div><button id="fit" class="icon-btn" aria-label="Ajustar mapa">⌂</button><button id="menuBtn" class="icon-btn" aria-label="Menú">⋮</button></header>
+<div id="viewport" class="viewport"><div id="stage" class="stage"><img id="map" src="assets/map.png" alt="Mapa de Alliance War"></div></div>
+<div id="choiceBanner" class="choice-banner"></div>
+<nav class="bottom-bar"><button id="openChampions" class="bar-btn primary">🏆 Campeones</button><button id="zoomOut" class="bar-btn">− Alejar</button><button id="zoomIn" class="bar-btn">＋ Acercar</button><button id="saveLocal" class="bar-btn">💾 Guardar</button></nav>
+<div id="backdrop" class="sheet-backdrop"></div><section id="sheet" class="sheet" aria-label="Biblioteca de campeones"><div class="grab"></div><div class="sheet-head"><h2>Campeones</h2><button id="closeSheet" class="close-sheet">×</button></div><input id="search" class="search" placeholder="Buscar campeón..."><div id="filters" class="filters"></div><div id="status"></div><div id="gallery"></div></section>
+<div id="menu" class="menu"><button id="recoverLocal">📂 Recuperar</button><button id="downloadProject">📁 Descargar proyecto</button><label>⬆️ Importar proyecto<input id="importProject" type="file" accept="application/json" hidden></label><button id="export">🖼️ Exportar PNG</button><button id="clear" class="danger">🗑️ Limpiar mapa</button></div>
+<div id="toast" class="toast"></div><div id="confirm" class="confirm"><div class="confirm-box"><h3 id="confirmTitle">Eliminar campeón</h3><p id="confirmText"></p><div class="confirm-actions"><button id="confirmNo">Cancelar</button><button id="confirmYes" class="yes">Eliminar</button></div></div></div>
+<script src="js/war-map.js"></script>
+</body>
+</html>
